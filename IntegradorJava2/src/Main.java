@@ -30,7 +30,8 @@ public class Main {
         Sucursal s2 = new Sucursal("Sucursal Norte",
                 LocalTime.of(10,0), LocalTime.of(20,0), d2);
 
-        /* 7) Promociones
+         
+        //7) Promociones
         Promocion promo1 = new Promocion(
                 "Happy Hour", LocalDate.now(),
                 LocalDate.now().plusDays(7),
@@ -42,13 +43,14 @@ public class Main {
                 LocalDate.now().plusDays(3),
                 LocalTime.of(12,0), LocalTime.of(14,0),
                 "30% off", 150.0, TipoPromocion.PROMOCION_1
-        ); */
+        );
 
-        /* 8) Imágenes
+
+        //8) Imágenes
         Imagen img1 = new Imagen("Imagen 1");
         Imagen img2 = new Imagen("Imagen 2");
 
-         */
+
 
         // 9) Categorías
         Categoria c1 = new Categoria("Bebidas");
@@ -86,7 +88,8 @@ public class Main {
         DetallePedido dp1 = new DetallePedido(2, 20.0);
         DetallePedido dp2 = new DetallePedido(1, 250.0);
 
-        /*18) Pedidos
+
+        //18) Pedidos
         Pedido pd1 = new Pedido(
                 LocalTime.of(14,30), 20.0, 15.0,
                 Estado.PENDIENTE, TipoEnvio.DELIVERY,
@@ -101,13 +104,13 @@ public class Main {
                 Arrays.asList(dp2)
         );
 
-         */
+
 
         //19) Facturas
         Factura f1 = new Factura(LocalDate.now(), 1111, 2222, "pref1", "ticket", FormaPago.EFECTIVO, 20.0);
         Factura f2 = new Factura(LocalDate.now(), 3333, 4444, "pref2", "ticket", FormaPago.MERCADO_PAGO, 250.0);
 
-        // Imprimimos TODO
+        // Imprimimos todo, porque tengo tiempo
         System.out.println(p1);
         System.out.println(p2);
         System.out.println(pr1);
@@ -120,12 +123,12 @@ public class Main {
         System.out.println(e2);
         System.out.println(s1);
         System.out.println(s2);
-        /*
+
         System.out.println(promo1);
         System.out.println(promo2);
         System.out.println(img1);
         System.out.println(img2);
-         */
+
         System.out.println(c1);
         System.out.println(c2);
         System.out.println(u1);
@@ -144,10 +147,10 @@ public class Main {
         System.out.println(u_2);
         System.out.println(dp1);
         System.out.println(dp2);
-        /*
+
         System.out.println(pd1);
         System.out.println(pd2);
-         */
+
         System.out.println(f1);
         System.out.println(f2);
     }

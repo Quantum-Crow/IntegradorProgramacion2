@@ -1,4 +1,3 @@
-// Imagen.java
 public class Imagen {
     private String denominacion;
 

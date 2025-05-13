@@ -1,4 +1,3 @@
-// Categoria.java
 public class Categoria {
     private String denominacion;
 

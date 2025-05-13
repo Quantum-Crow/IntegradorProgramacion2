@@ -1,4 +1,3 @@
-// DetallePedido.java
 public class DetallePedido {
     private int cantidad;
     private double subTotal;
@@ -8,6 +7,30 @@ public class DetallePedido {
     public DetallePedido(int cantidad, double subTotal) {
         this.cantidad = cantidad;
         this.subTotal = subTotal;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public double getSubTotal() {
+        return subTotal;
+    }
+
+    public void setSubTotal(double subTotal) {
+        this.subTotal = subTotal;
+    }
+
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    public Articulo getArticulo() {
+        return articulo;
     }
 
     public void setPedido(Pedido p) { this.pedido = p; }

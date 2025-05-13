@@ -1,4 +1,3 @@
-// Pais.java
 public class Pais {
     private String nombre;
 

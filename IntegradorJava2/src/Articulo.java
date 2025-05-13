@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-// Articulo.java
 public class Articulo {
     protected String denominacion;
     protected double precioVenta;

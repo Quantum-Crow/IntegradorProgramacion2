@@ -1,4 +1,3 @@
-// Domicilio.java
 public class Domicilio {
     private String calle;
     private int numero;
@@ -12,7 +11,37 @@ public class Domicilio {
         this.localidad = localidad;
     }
 
-    // getters/setters omitted for brevity
+    public String getCalle() {
+        return calle;
+    }
+
+    public void setCalle(String calle) {
+        this.calle = calle;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public int getCp() {
+        return cp;
+    }
+
+    public void setCp(int cp) {
+        this.cp = cp;
+    }
+
+    public Localidad getLocalidad() {
+        return localidad;
+    }
+
+    public void setLocalidad(Localidad localidad) {
+        this.localidad = localidad;
+    }
 
     @Override
     public String toString() {

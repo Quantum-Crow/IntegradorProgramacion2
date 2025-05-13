@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-// ArticuloManufacturado.java
-// ArticuloManufacturado.java
 public class ArticuloManufacturado extends Articulo {
     private int tiempoEstimadoMinutos;
     private String preparacion;
@@ -17,6 +15,22 @@ public class ArticuloManufacturado extends Articulo {
                                  String preparacion) {
         super(denominacion, precioVenta);//, categoria, unidadMedida);
         this.tiempoEstimadoMinutos = tiempoEstimadoMinutos;
+        this.preparacion = preparacion;
+    }
+
+    public int getTiempoEstimadoMinutos() {
+        return tiempoEstimadoMinutos;
+    }
+
+    public void setTiempoEstimadoMinutos(int tiempoEstimadoMinutos) {
+        this.tiempoEstimadoMinutos = tiempoEstimadoMinutos;
+    }
+
+    public String getPreparacion() {
+        return preparacion;
+    }
+
+    public void setPreparacion(String preparacion) {
         this.preparacion = preparacion;
     }
 

@@ -3,7 +3,6 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-// Promocion.java
 public class Promocion {
     private String denominacion;
     private LocalDate fechaDesde, fechaHasta;
@@ -32,5 +31,19 @@ public class Promocion {
     public List<Sucursal> getSucursales() {
         return sucursales;
     }
-    // toString(), getters, setters...
+
+    @Override
+    public String toString() {
+        return "Promocion{" +
+                "denominacion='" + denominacion + '\'' +
+                ", fechaDesde=" + fechaDesde +
+                ", fechaHasta=" + fechaHasta +
+                ", horaDesde=" + horaDesde +
+                ", horaHasta=" + horaHasta +
+                ", descripcionDescuento='" + descripcionDescuento + '\'' +
+                ", precioPromocional=" + precioPromocional +
+                ", tipo=" + tipo +
+                ", sucursales=" + sucursales +
+                '}';
+    }
 }
