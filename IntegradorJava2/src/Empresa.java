@@ -18,7 +18,7 @@ public class Empresa {
         s.setEmpresa(this);
     }
 
-    //Hacer getters y setters
+    //Recordar hacer getters y setters
 
     @Override
     public String toString() {

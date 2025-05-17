@@ -1,4 +1,3 @@
-// ArticuloInsumo.java
 public class ArticuloInsumo extends Articulo {
     private double precioCompra;
     private int stockActual, stockMaximo;
@@ -12,7 +11,7 @@ public class ArticuloInsumo extends Articulo {
                           int stockActual,
                           int stockMaximo,
                           boolean esParaElaborar) {
-        super(denominacion, precioVenta, categoria, unidadMedida);
+        super(denominacion, precioVenta);// categoria, unidadMedida);
         this.precioCompra = precioCompra;
         this.stockActual = stockActual;
         this.stockMaximo = stockMaximo;

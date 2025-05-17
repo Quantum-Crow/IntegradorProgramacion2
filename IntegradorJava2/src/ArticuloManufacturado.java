@@ -9,8 +9,8 @@ public class ArticuloManufacturado extends Articulo {
 
     public ArticuloManufacturado(String denominacion,
                                  double precioVenta,
-                                 //Categoria categoria,
-                                 //UnidadMedida unidadMedida,
+                                 Categoria categoria,
+                                 UnidadMedida unidadMedida,
                                  int tiempoEstimadoMinutos,
                                  String preparacion) {
         super(denominacion, precioVenta);//, categoria, unidadMedida);
@@ -40,6 +40,5 @@ public class ArticuloManufacturado extends Articulo {
                 ", tiempo=" + tiempoEstimadoMinutos +
                 " min, prep=" + preparacion + "]";
     }
-    // toString(), getters, setters...
 }
 

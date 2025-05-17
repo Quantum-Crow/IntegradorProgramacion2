@@ -1,4 +1,3 @@
-// UnidadMedida.java
 public class UnidadMedida {
     private String denominacion;
 

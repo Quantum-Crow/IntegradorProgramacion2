@@ -60,18 +60,23 @@ public class Main {
         //10) Unidades de medida
         UnidadMedida u1 = new UnidadMedida("Litro");
         UnidadMedida u2 = new UnidadMedida("Kilogramo");
+        UnidadMedida u3 = new UnidadMedida("Unidad");
+        UnidadMedida u4 = new UnidadMedida("Porcion");
 
         //11) Artículos
-       /* Articulo a1 = new Articulo("Agua", 10.0);
-        Articulo a2 = new Articulo("Carne", 250.0);*/
+        /*
+        Los elementos comentados de este modo son los errores que no borre para no perderme, tener en cuenta
+        Articulo a1 = new Articulo("Agua", 10.0);
+        Articulo a2 = new Articulo("Carne", 250.0);
+        */
 
         //12) Insumos
         ArticuloInsumo ai1 = new ArticuloInsumo("Harina", 5.0, insumo , u2 ,100, 200, 200, true);
         ArticuloInsumo ai2 = new ArticuloInsumo("Aceite", 50, insumo, u1,100, 300, 500 ,true);
 
         //13) Manufacturados
-        ArticuloManufacturado am1 = new ArticuloManufacturado("Empanada", 15, 10,"Hornear");
-        ArticuloManufacturado am2 = new ArticuloManufacturado("Pizza", 20, 20,"Hornear");
+        ArticuloManufacturado am1 = new ArticuloManufacturado("Empanada", 15, c2, u3, 10,"Hornear");
+        ArticuloManufacturado am2 = new ArticuloManufacturado("Pizza", 20, c2, u4, 20,"Hornear");
 
         //14) Detalle Manufacturado
         ArticuloManufacturadoDetalle amd1 = new ArticuloManufacturadoDetalle(am1, 10);
@@ -134,6 +139,9 @@ public class Main {
         System.out.println(c2);
         System.out.println(u1);
         System.out.println(u2);
+        System.out.println(u3);
+        System.out.println(u4);
+        System.out.println(insumo);
         /*
         System.out.println(a1);
         System.out.println(a2);
