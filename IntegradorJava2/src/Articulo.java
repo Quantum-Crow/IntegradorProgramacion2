@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Articulo {
+public abstract class Articulo {
     protected String denominacion;
     protected double precioVenta;
 
@@ -65,11 +65,9 @@ public class Articulo {
         this.detallesPedido = detallesPedido;
     }
 
-    // getters, setters, toString()...
 
     @Override
     public String toString() {
         return "Articulo[" + denominacion + ", precio=" + precioVenta + "]";
     }
-    // getters, setters
 }

@@ -55,18 +55,19 @@ public class Main {
         // 9) Categorías
         Categoria c1 = new Categoria("Bebidas");
         Categoria c2 = new Categoria("Comidas");
+        Categoria insumo = new Categoria("insumo");
 
         //10) Unidades de medida
         UnidadMedida u1 = new UnidadMedida("Litro");
         UnidadMedida u2 = new UnidadMedida("Kilogramo");
 
         //11) Artículos
-        Articulo a1 = new Articulo("Agua", 10.0);
-        Articulo a2 = new Articulo("Carne", 250.0);
+       /* Articulo a1 = new Articulo("Agua", 10.0);
+        Articulo a2 = new Articulo("Carne", 250.0);*/
 
         //12) Insumos
-        ArticuloInsumo ai1 = new ArticuloInsumo("Harina", 5.0, 100, 200, 200, true);
-        ArticuloInsumo ai2 = new ArticuloInsumo("Ni idea que poner aca tampoco", 50, 100, 300, 500 ,true);
+        ArticuloInsumo ai1 = new ArticuloInsumo("Harina", 5.0, insumo , u2 ,100, 200, 200, true);
+        ArticuloInsumo ai2 = new ArticuloInsumo("Aceite", 50, insumo, u1,100, 300, 500 ,true);
 
         //13) Manufacturados
         ArticuloManufacturado am1 = new ArticuloManufacturado("Empanada", 15, 10,"Hornear");
@@ -133,8 +134,10 @@ public class Main {
         System.out.println(c2);
         System.out.println(u1);
         System.out.println(u2);
+        /*
         System.out.println(a1);
         System.out.println(a2);
+         */
         System.out.println(ai1);
         System.out.println(ai2);
         System.out.println(am1);

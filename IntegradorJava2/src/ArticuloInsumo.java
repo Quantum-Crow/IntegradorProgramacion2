@@ -6,13 +6,13 @@ public class ArticuloInsumo extends Articulo {
 
     public ArticuloInsumo(String denominacion,
                           double precioVenta,
-                          //Categoria categoria,
-                          //UnidadMedida unidadMedida,
+                          Categoria categoria,
+                          UnidadMedida unidadMedida,
                           double precioCompra,
                           int stockActual,
                           int stockMaximo,
                           boolean esParaElaborar) {
-        super(denominacion, precioVenta); //, categoria, unidadMedida);
+        super(denominacion, precioVenta, categoria, unidadMedida);
         this.precioCompra = precioCompra;
         this.stockActual = stockActual;
         this.stockMaximo = stockMaximo;
