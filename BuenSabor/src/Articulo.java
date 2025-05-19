@@ -13,4 +13,8 @@ public abstract class Articulo {
         this.denominacion = denominacion;
         this.unidad = unidad;
     }
+
+    public void setPrecioVenta(double precioVenta) {
+        this.precioVenta = precioVenta;
+    }
 }

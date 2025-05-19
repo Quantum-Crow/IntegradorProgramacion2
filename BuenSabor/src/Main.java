@@ -53,18 +53,18 @@ public class Main {
 
         ArticuloInsumo cafeMolido = new ArticuloInsumo("Café molido torrado", gramos, 8000.0, 5, 10, true);
         ArticuloInsumo leche = new ArticuloInsumo("Leche entera", mililitros,2500.0, 20,50,true);
-        ArticuloInsumo lecheAlmendras = new ArticuloInsumo("Leche Almendras", mililitros,4500,);
+        ArticuloInsumo lecheAlmendras = new ArticuloInsumo("Leche Almendras", mililitros,4500.0,14,27,true);
         ArticuloInsumo azucar = new ArticuloInsumo("Azucar blanca",gramos,1500.0, 10,15, true);
         ArticuloInsumo azucarMascabo = new ArticuloInsumo("Azucar Mascabo",gramos,3500.0, 5,8, true);
         ArticuloInsumo capsulasEspecialidad = new ArticuloInsumo("Capsulas especialidad importadas",gramos,10000.0,5,12, true);
-        ArticuloInsumo harina = new ArticuloInsumo();
-        ArticuloInsumo levadura = new ArticuloInsumo();
-        ArticuloInsumo sal = new ArticuloInsumo();
-        ArticuloInsumo grasa = new ArticuloInsumo();
-        ArticuloInsumo salsa = new ArticuloInsumo();
-        ArticuloInsumo condimentos = new ArticuloInsumo();
-        ArticuloInsumo queso = new ArticuloInsumo();
-        ArticuloInsumo salameCalabres = new ArticuloInsumo();
+        ArticuloInsumo harina = new ArticuloInsumo("Harina 000", gramos, 2500.0, 10,25, true);
+        ArticuloInsumo levadura = new ArticuloInsumo("Calsa", gramos, 1400.0, 30,100, true);
+        ArticuloInsumo sal = new ArticuloInsumo("Celusal", gramos,1250.25, 3, 6, true);
+        ArticuloInsumo grasa = new ArticuloInsumo("Grasa blanca", gramos,2250.25, 12, 26, true);
+        ArticuloInsumo salsa = new ArticuloInsumo("La campagnola", gramos,1750.25, 30, 68, true);
+        ArticuloInsumo condimentos = new ArticuloInsumo("Alicante", gramos,900.0, 8,16, true);
+        ArticuloInsumo queso = new ArticuloInsumo("Creon", gramos,6250.25, 30, 100, true);
+        ArticuloInsumo salameCalabres = new ArticuloInsumo("El salame del pueblo", gramos,5000.5, 10, 22, true);
 
         ArticuloManufacturadoDetalle detalleCafe1 = new ArticuloManufacturadoDetalle(1, cafeMolido);
         ArticuloManufacturadoDetalle detalleCafe2 = new ArticuloManufacturadoDetalle(1,leche);
@@ -84,23 +84,23 @@ public class Main {
         ArticuloManufacturadoDetalle detallePizza3 = new ArticuloManufacturadoDetalle(1, condimentos);
         ArticuloManufacturadoDetalle detallePizza4 = new ArticuloManufacturadoDetalle(1, salameCalabres);
 
-        ArticuloManufacturado cafeVenta = new ArticuloManufacturado();
+        ArticuloManufacturado cafeVenta = new ArticuloManufacturado("Cafe cortado", 2500.25, mililitros,"Cafe con leche entera y azucar o solo cafe con/sin azucar",3,"infusión");
         cafeVenta.addDetalle(detalleCafe1);
         cafeVenta.addDetalle(detalleCafe2);
         cafeVenta.addDetalle(detalleCafe3);
 
-        ArticuloManufacturado cafeEspecialidad = new ArticuloManufacturado();
+        ArticuloManufacturado cafeEspecialidad = new ArticuloManufacturado("Cafe Especialidad", 7500.25, mililitros,"Cafe de capsula importada con leche de almendras con azucar de mascabo",7,"infusión");
         cafeEspecialidad.addDetalle(detalleCafeEspecialidad1);
         cafeEspecialidad.addDetalle(detalleCafeEspecialidad2);
         cafeEspecialidad.addDetalle(detalleCafeEspecialidad3);
 
-        ArticuloManufacturado tortita = new ArticuloManufacturado();
+        ArticuloManufacturado tortita = new ArticuloManufacturado("Tortita", 1000.2, gramos,"Tortita raspada, pinchada o chicharrón",3,"infusión");
         tortita.addDetalle(detalleTortita1);
         tortita.addDetalle(detalleMasa1);
         tortita.addDetalle(detalleMasa2);
         tortita.addDetalle(detalleMasa3);
 
-        ArticuloManufacturado pizzaMozzarella = new ArticuloManufacturado();
+        ArticuloManufacturado pizzaMozzarella = new ArticuloManufacturado("Muza", 7500.25, gramos,"Pizza Mozzarella con salsa de la casa",30,"Horno");
         pizzaMozzarella.addDetalle(detalleMasa1);
         pizzaMozzarella.addDetalle(detalleMasa2);
         pizzaMozzarella.addDetalle(detalleMasa3);
@@ -109,6 +109,8 @@ public class Main {
         pizzaMozzarella.addDetalle(detallePizza3);
 
         ArticuloManufacturado pizzaCalabresa = pizzaMozzarella;
+        pizzaCalabresa.setPrecioVenta(8700.0);
+        pizzaCalabresa.setDescripcion("Pizza con queso mozzarella, salame calabres y salsa de la casa");
         pizzaCalabresa.addDetalle(detallePizza4);
 
         promocionPanaderia1.addArticulo(cafeVenta);
@@ -122,5 +124,7 @@ public class Main {
 
         promocionPizzeria2.addArticulo(pizzaCalabresa);
         promocionPizzeria2.addArticulo(cervezaArtesanal);
+
+        System.out.println(pizzaCalabresa);
     }
 }

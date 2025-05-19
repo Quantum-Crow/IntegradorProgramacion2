@@ -23,4 +23,17 @@ public class ArticuloManufacturado extends Articulo {
     public void addDetalle(ArticuloManufacturadoDetalle detalle){
         articuloManufacturadoDetalleSet.add(detalle);
     }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    @Override
+    public String toString() {
+        return "ArticuloManufacturado{" +
+                "descripcion='" + descripcion + '\'' +
+                ", tiempoEstimadoMinutos=" + tiempoEstimadoMinutos +
+                ", preparacion='" + preparacion + '\'' +
+                '}';
+    }
 }
