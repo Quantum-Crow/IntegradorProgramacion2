@@ -1,27 +1,71 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Empresa {
-    private String nombre;
-    private String razonSocial;
-    private int cuil;
-    private List<Sucursal> sucursales = new ArrayList<>();
+    private String nombre, razonSocial;
+    private Integer cuil;
 
-    public Empresa(String nombre, String razonSocial, int cuil) {
+    private Set<Sucursal> sucursales;
+
+    public Empresa(String nombre, String razonSocial, Integer cuil) {
         this.nombre = nombre;
         this.razonSocial = razonSocial;
         this.cuil = cuil;
     }
 
-    public void addSucursal(Sucursal s) {
-        sucursales.add(s);
-        s.setEmpresa(this);
+    public void addSucursal(Sucursal sucursal){
+        if(this.sucursales == null) {
+            this.sucursales = new HashSet<>();
+        }
+        sucursales.add(sucursal);
     }
 
-    //Recordar hacer getters y setters
+    public void removeSucursar(Sucursal sucursal){
+        if(this.sucursales != null) {
+            this.sucursales.remove(sucursal);
+        }
+    }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getRazonSocial() {
+        return razonSocial;
+    }
+
+    public void setRazonSocial(String razonSocial) {
+        this.razonSocial = razonSocial;
+    }
+
+    public Integer getCuil() {
+        return cuil;
+    }
+
+    public void setCuil(Integer cuil) {
+        this.cuil = cuil;
+    }
+
+    public HashSet<Sucursal> getSucursales() {
+        return (HashSet<Sucursal>) sucursales;
+    }
+
+    public void setSucursales(HashSet<Sucursal> sucursales) {
+        this.sucursales = sucursales;
+    }
     @Override
     public String toString() {
-        return "Empresa[" + nombre + ", " + razonSocial + ", CUIL=" + cuil + "]";
+        return "Empresa{" +
+                "nombre='" + nombre + '\'' +
+                ", razonSocial='" + razonSocial + '\'' +
+                ", cuil=" + cuil +
+                ", sucursales=" + sucursales +
+                '}';
     }
+
+
 }

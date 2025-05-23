@@ -1,29 +1,31 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ArticuloManufacturado extends Articulo {
-    private int tiempoEstimadoMinutos;
-    private String preparacion;
-    // asociación a detalles
-    private List<ArticuloManufacturadoDetalle> detalles = new ArrayList<>();
+    private String descripcion, preparacion;
+    private Integer tiempoEstimadoMinutos;
+    private Set<ArticuloManufacturadoDetalle> ArtManDet;
 
-    public ArticuloManufacturado(String denominacion,
-                                 double precioVenta,
-                                 Categoria categoria,
-                                 UnidadMedida unidadMedida,
-                                 int tiempoEstimadoMinutos,
-                                 String preparacion) {
-        super(denominacion, precioVenta);//, categoria, unidadMedida);
-        this.tiempoEstimadoMinutos = tiempoEstimadoMinutos;
-        this.preparacion = preparacion;
+    public ArticuloManufacturado(String denominacion, double precioVenta, UnidadMedida unidadMedida, String descripcion) {
+        super(denominacion, precioVenta, unidadMedida);
+        this.descripcion = descripcion;
+    }
+    public void addDetalle(ArticuloManufacturadoDetalle det) {
+        if (this.ArtManDet == null) {
+            this.ArtManDet = new HashSet<ArticuloManufacturadoDetalle>();
+        }
+        this.ArtManDet.add(det);
+    }
+    public void removeDetalle(ArticuloManufacturadoDetalle det) {
+        this.ArtManDet.remove(det);
     }
 
-    public int getTiempoEstimadoMinutos() {
-        return tiempoEstimadoMinutos;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setTiempoEstimadoMinutos(int tiempoEstimadoMinutos) {
-        this.tiempoEstimadoMinutos = tiempoEstimadoMinutos;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public String getPreparacion() {
@@ -34,11 +36,33 @@ public class ArticuloManufacturado extends Articulo {
         this.preparacion = preparacion;
     }
 
+    public Integer getTiempoEstimadoMinutos() {
+        return tiempoEstimadoMinutos;
+    }
+
+    public void setTiempoEstimadoMinutos(Integer tiempoEstimadoMinutos) {
+        this.tiempoEstimadoMinutos = tiempoEstimadoMinutos;
+    }
+
+    public Set<ArticuloManufacturadoDetalle> getArtManDet() {
+        return ArtManDet;
+    }
+
+    public void setArtManDet(Set<ArticuloManufacturadoDetalle> artManDet) {
+        ArtManDet = artManDet;
+    }
+
     @Override
     public String toString() {
-        return "Manufacturado[" + detalles +
-                ", tiempo=" + tiempoEstimadoMinutos +
-                " min, prep=" + preparacion + "]";
+        return "ArticuloManufacturado{" +
+                "descripcion='" + descripcion + '\'' +
+                ", preparacion='" + preparacion + '\'' +
+                ", tiempoEstimadoMinutos=" + tiempoEstimadoMinutos +
+                ", ArtManDet=" + ArtManDet +
+                ", Imagen=" + Imagen +
+                ", unidadMedida=" + unidadMedida +
+                ", precioVenta=" + precioVenta +
+                ", denominacion='" + denominacion + '\'' +
+                '}';
     }
 }
-

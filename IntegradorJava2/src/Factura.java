@@ -2,28 +2,15 @@ import java.time.LocalDate;
 
 public class Factura {
     private LocalDate fechaFacturacion;
-    private int mpPaymentId;
-    private int mpMerchantOrderId;
-    private String mpPreferenceId;
-    private String mpPaymentType;
+    private Integer mpPaymentId, mpMerchantOrderId;
+    private String mpPreferenceId, mpPaymentType;
     private FormaPago formaPago;
     private double totalVenta;
-    private Pedido pedido;
 
-    public Factura(LocalDate fechaFacturacion,
-                   int mpPaymentId,
-                   int mpMerchantOrderId,
-                   String mpPreferenceId,
-                   String mpPaymentType,
-                   FormaPago formaPago,
-                   double totalVenta) {
+    public Factura(LocalDate fechaFacturacion, double totalVenta, FormaPago formaPago) {
         this.fechaFacturacion = fechaFacturacion;
-        this.mpPaymentId = mpPaymentId;
-        this.mpMerchantOrderId = mpMerchantOrderId;
-        this.mpPreferenceId = mpPreferenceId;
-        this.mpPaymentType = mpPaymentType;
-        this.formaPago = formaPago;
         this.totalVenta = totalVenta;
+        this.formaPago = formaPago;
     }
 
     public LocalDate getFechaFacturacion() {
@@ -34,19 +21,19 @@ public class Factura {
         this.fechaFacturacion = fechaFacturacion;
     }
 
-    public int getMpPaymentId() {
+    public Integer getMpPaymentId() {
         return mpPaymentId;
     }
 
-    public void setMpPaymentId(int mpPaymentId) {
+    public void setMpPaymentId(Integer mpPaymentId) {
         this.mpPaymentId = mpPaymentId;
     }
 
-    public int getMpMerchantOrderId() {
+    public Integer getMpMerchantOrderId() {
         return mpMerchantOrderId;
     }
 
-    public void setMpMerchantOrderId(int mpMerchantOrderId) {
+    public void setMpMerchantOrderId(Integer mpMerchantOrderId) {
         this.mpMerchantOrderId = mpMerchantOrderId;
     }
 
@@ -82,20 +69,16 @@ public class Factura {
         this.totalVenta = totalVenta;
     }
 
-    public Pedido getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(Pedido p) { this.pedido = p; }
-
     @Override
     public String toString() {
-        return "Factura[" + fechaFacturacion +
+        return "Factura{" +
+                "fechaFacturacion=" + fechaFacturacion +
                 ", mpPaymentId=" + mpPaymentId +
-                ", mpOrderId=" + mpMerchantOrderId +
-                ", prefId=" + mpPreferenceId +
-                ", type=" + mpPaymentType +
-                ", pago=" + formaPago +
-                ", total=" + totalVenta + "]";
+                ", mpMerchantOrderId=" + mpMerchantOrderId +
+                ", mpPreferenceId='" + mpPreferenceId + '\'' +
+                ", mpPaymentType='" + mpPaymentType + '\'' +
+                ", formaPago=" + formaPago +
+                ", totalVenta=" + totalVenta +
+                '}';
     }
 }

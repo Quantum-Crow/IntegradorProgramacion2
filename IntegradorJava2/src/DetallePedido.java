@@ -1,19 +1,19 @@
 public class DetallePedido {
-    private int cantidad;
+    private Integer cantidad;
     private double subTotal;
-    private Pedido pedido;
+
     private Articulo articulo;
 
-    public DetallePedido(int cantidad, double subTotal) {
+    public DetallePedido(Integer cantidad, Articulo articulo) {
         this.cantidad = cantidad;
-        this.subTotal = subTotal;
+        this.articulo = articulo;
     }
 
-    public int getCantidad() {
+    public Integer getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(int cantidad) {
+    public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
     }
 
@@ -25,19 +25,20 @@ public class DetallePedido {
         this.subTotal = subTotal;
     }
 
-    public Pedido getPedido() {
-        return pedido;
-    }
-
     public Articulo getArticulo() {
         return articulo;
     }
 
-    public void setPedido(Pedido p) { this.pedido = p; }
-    public void setArticulo(Articulo a) { this.articulo = a; }
+    public void setArticulo(Articulo articulo) {
+        this.articulo = articulo;
+    }
 
     @Override
     public String toString() {
-        return "DetallePedido[cant=" + cantidad + ", sub=" + subTotal + "]";
+        return "DetallePedido{" +
+                "cantidad=" + cantidad +
+                ", subTotal=" + subTotal +
+                ", articulo=" + articulo +
+                '}';
     }
 }

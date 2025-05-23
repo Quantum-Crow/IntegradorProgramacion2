@@ -1,33 +1,40 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 
 public class Pedido {
     private LocalTime horaEstimadaFinalizacion;
-    private double total, totalCosto;
+    private Double total;
+    private Double totalCosto;
     private Estado estado;
     private TipoEnvio tipoEnvio;
     private FormaPago formaPago;
     private LocalDate fechaPedido;
-
-    private Cliente cliente;
-    private Sucursal sucursal;
-    private List<DetallePedido> detalles = new ArrayList<>();
     private Factura factura;
+    private Sucursal sucursal;
+    private Domicilio domicilio;
+    private HashSet<DetallePedido> detallesPedido;
 
-    public Pedido(LocalTime he, double total, double costo,
-                  Estado estado, TipoEnvio te,
-                  FormaPago fp, LocalDate fecha,
-                  List<DetallePedido> detalles) {
-        this.horaEstimadaFinalizacion = he;
-        this.total = total;
-        this.totalCosto = costo;
+    public Pedido(Estado estado, TipoEnvio tipoEnvio, FormaPago formaPago, LocalDate fechaPedido, Sucursal sucursal, Domicilio domicilio) {
         this.estado = estado;
-        this.tipoEnvio = te;
-        this.formaPago = fp;
-        this.fechaPedido = fecha;
-        this.detalles = detalles;
+        this.tipoEnvio = tipoEnvio;
+        this.formaPago = formaPago;
+        this.fechaPedido = fechaPedido;
+        this.sucursal = sucursal;
+        this.domicilio = domicilio;
+    }
+
+    public void addDetallePedido(DetallePedido detallePedido) {
+        if (detallesPedido == null) {
+            detallesPedido = new HashSet<>();
+        }
+        this.detallesPedido.add(detallePedido);
+    }
+
+    public void removeDetallePedido(DetallePedido detallePedido) {
+        if (detallesPedido != null) {
+            this.detallesPedido.remove(detallePedido);
+        }
     }
 
     public LocalTime getHoraEstimadaFinalizacion() {
@@ -38,19 +45,19 @@ public class Pedido {
         this.horaEstimadaFinalizacion = horaEstimadaFinalizacion;
     }
 
-    public double getTotal() {
+    public Double getTotal() {
         return total;
     }
 
-    public void setTotal(double total) {
+    public void setTotal(Double total) {
         this.total = total;
     }
 
-    public double getTotalCosto() {
+    public Double getTotalCosto() {
         return totalCosto;
     }
 
-    public void setTotalCosto(double totalCosto) {
+    public void setTotalCosto(Double totalCosto) {
         this.totalCosto = totalCosto;
     }
 
@@ -86,44 +93,36 @@ public class Pedido {
         this.fechaPedido = fechaPedido;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public Factura getFactura() {
+        return factura;
+    }
+
+    public void setFactura(Factura factura) {
+        this.factura = factura;
     }
 
     public Sucursal getSucursal() {
         return sucursal;
     }
 
-    public List<DetallePedido> getDetalles() {
-        return detalles;
+    public void setSucursal(Sucursal sucursal) {
+        this.sucursal = sucursal;
     }
 
-    public void setDetalles(List<DetallePedido> detalles) {
-        this.detalles = detalles;
+    public Domicilio getDomicilio() {
+        return domicilio;
     }
 
-    public Factura getFactura() {
-        return factura;
+    public void setDomicilio(Domicilio domicilio) {
+        this.domicilio = domicilio;
     }
 
-    public void setCliente(Cliente cli) {
-
-        this.cliente = cli;
+    public HashSet<DetallePedido> getDetallesPedido() {
+        return detallesPedido;
     }
 
-    public void setSucursal(Sucursal suc) {
-
-        this.sucursal = suc;
-    }
-
-    public void addDetalle(DetallePedido dp) {
-        detalles.add(dp);
-        dp.setPedido(this);
-    }
-
-    public void setFactura(Factura f) {
-        this.factura = f;
-        f.setPedido(this);
+    public void setDetallesPedido(HashSet<DetallePedido> detallesPedido) {
+        this.detallesPedido = detallesPedido;
     }
 
     @Override
@@ -136,10 +135,10 @@ public class Pedido {
                 ", tipoEnvio=" + tipoEnvio +
                 ", formaPago=" + formaPago +
                 ", fechaPedido=" + fechaPedido +
-                ", cliente=" + cliente +
-                ", sucursal=" + sucursal +
-                ", detalles=" + detalles +
                 ", factura=" + factura +
+                ", sucursal=" + sucursal +
+                ", domicilio=" + domicilio +
+                ", detallesPedido=" + detallesPedido +
                 '}';
     }
 }

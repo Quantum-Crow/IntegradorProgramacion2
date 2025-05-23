@@ -1,3 +1,3 @@
 public enum TipoEnvio {
-    DELIVERY, TAKEAWAY;
+    delivery, TakeAway
 }

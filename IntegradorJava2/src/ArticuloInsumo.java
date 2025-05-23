@@ -1,60 +1,56 @@
-public class ArticuloInsumo extends Articulo {
-    private double precioCompra;
-    private int stockActual, stockMaximo;
-    private boolean esParaElaborar;
+public class ArticuloInsumo extends Articulo{
+    private double PrecioCompra;
+    private Integer stockActual, stockMaximo;
+    private Boolean esParaElaborar;
 
-    public ArticuloInsumo(String denominacion,
-                          double precioVenta,
-                          Categoria categoria,
-                          UnidadMedida unidadMedida,
-                          double precioCompra,
-                          int stockActual,
-                          int stockMaximo,
-                          boolean esParaElaborar) {
-        super(denominacion, precioVenta);// categoria, unidadMedida);
-        this.precioCompra = precioCompra;
-        this.stockActual = stockActual;
-        this.stockMaximo = stockMaximo;
-        this.esParaElaborar = esParaElaborar;
+    public ArticuloInsumo(String denominacion, double precioVenta, UnidadMedida unidadMedida, double precioCompra) {
+        super(denominacion, precioVenta, unidadMedida);
+        PrecioCompra = precioCompra;
     }
 
     public double getPrecioCompra() {
-        return precioCompra;
+        return PrecioCompra;
     }
 
     public void setPrecioCompra(double precioCompra) {
-        this.precioCompra = precioCompra;
+        PrecioCompra = precioCompra;
     }
 
-    public int getStockActual() {
+    public Integer getStockActual() {
         return stockActual;
     }
 
-    public void setStockActual(int stockActual) {
+    public void setStockActual(Integer stockActual) {
         this.stockActual = stockActual;
     }
 
-    public int getStockMaximo() {
+    public Integer getStockMaximo() {
         return stockMaximo;
     }
 
-    public void setStockMaximo(int stockMaximo) {
+    public void setStockMaximo(Integer stockMaximo) {
         this.stockMaximo = stockMaximo;
     }
 
-    public boolean isEsParaElaborar() {
+    public Boolean getEsParaElaborar() {
         return esParaElaborar;
     }
 
-    public void setEsParaElaborar(boolean esParaElaborar) {
+    public void setEsParaElaborar(Boolean esParaElaborar) {
         this.esParaElaborar = esParaElaborar;
     }
 
     @Override
     public String toString() {
-        return "ArticuloInsumo[compra=" + precioCompra +
-                ", stock=" + stockActual + "/" + stockMaximo +
-                ", elaboracion=" + esParaElaborar + "]";
+        return "ArticuloInsumo{" +
+                "esParaElaborar=" + esParaElaborar +
+                ", PrecioCompra=" + PrecioCompra +
+                ", stockActual=" + stockActual +
+                ", stockMaximo=" + stockMaximo +
+                ", Imagen=" + Imagen +
+                ", denominacion='" + denominacion + '\'' +
+                ", precioVenta=" + precioVenta +
+                ", unidadMedida=" + unidadMedida +
+                '}';
     }
-    // toString(), getters, setters...
 }

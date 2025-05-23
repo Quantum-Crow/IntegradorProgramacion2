@@ -1,31 +1,34 @@
 public class ArticuloManufacturadoDetalle {
-    private ArticuloManufacturado producto;
-    private int cantidad;
+    private Integer cantidad;
 
-    public ArticuloManufacturadoDetalle(ArticuloManufacturado producto, int cantidad) {
-        this.producto = producto;
+    private ArticuloInsumo articulo;
+
+    public ArticuloManufacturadoDetalle(Integer cantidad, ArticuloInsumo articulo) {
         this.cantidad = cantidad;
+        this.articulo = articulo;
     }
 
-    public ArticuloManufacturado getProducto() {
-        return producto;
-    }
-
-    public void setProducto(ArticuloManufacturado producto) {
-        this.producto = producto;
-    }
-
-    public int getCantidad() {
+    public Integer getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(int cantidad) {
+    public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
+    }
+
+    public ArticuloInsumo getArticulo() {
+        return articulo;
+    }
+
+    public void setArticulo(ArticuloInsumo articulo) {
+        this.articulo = articulo;
     }
 
     @Override
     public String toString() {
-        return "DetalleManufacturado[" + producto +
-                ", cantidad=" + cantidad + "]";
+        return "ArticuloManufacturadoDetalle{" +
+                "cantidad=" + cantidad +
+                ", articulo=" + articulo +
+                '}';
     }
 }

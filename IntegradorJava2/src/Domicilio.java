@@ -1,14 +1,14 @@
 public class Domicilio {
     private String calle;
-    private int numero;
-    private int cp;
+    private Integer numero;
+    private Integer cp;
+    //asoc
     private Localidad localidad;
 
-    public Domicilio(String calle, int numero, int cp, Localidad localidad) {
+    public Domicilio(String calle, Integer numero, Integer cp) {
         this.calle = calle;
         this.numero = numero;
         this.cp = cp;
-        this.localidad = localidad;
     }
 
     public String getCalle() {
@@ -19,19 +19,19 @@ public class Domicilio {
         this.calle = calle;
     }
 
-    public int getNumero() {
+    public Integer getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(Integer numero) {
         this.numero = numero;
     }
 
-    public int getCp() {
+    public Integer getCp() {
         return cp;
     }
 
-    public void setCp(int cp) {
+    public void setCp(Integer cp) {
         this.cp = cp;
     }
 
@@ -45,7 +45,11 @@ public class Domicilio {
 
     @Override
     public String toString() {
-        return "Domicilio[" + calle + " " + numero + ", CP=" + cp
-                + ", " + localidad + "]";
+        return "Domicilio{" +
+                "calle='" + calle + '\'' +
+                ", numero=" + numero +
+                ", cp=" + cp +
+                ", localidad=" + localidad +
+                '}';
     }
 }

@@ -1,7 +1,7 @@
-public class UnidadMedida {
+public class Imagen1 {
     private String denominacion;
 
-    public UnidadMedida(String denominacion) {
+    public Imagen1(String denominacion) {
         this.denominacion = denominacion;
     }
 
@@ -15,7 +15,7 @@ public class UnidadMedida {
 
     @Override
     public String toString() {
-        return "UnidadMedida{" +
+        return "Imagen1{" +
                 "denominacion='" + denominacion + '\'' +
                 '}';
     }

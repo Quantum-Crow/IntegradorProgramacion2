@@ -1,32 +1,47 @@
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 
 public class Sucursal {
     private String nombre;
-    private LocalTime horarioApertura, horarioCierre;
-    private Empresa empresa;
+    private LocalTime horarioApertura;
+    private LocalTime horarioCierre;
+
+    //asociaciones
     private Domicilio domicilio;
-    private List<Promocion> promociones = new ArrayList<>();
-    private List<Pedido> pedidos = new ArrayList<>();
+    private HashSet<Categoria> categoria;
+    private HashSet<Promocion> promocion;
 
-    public Sucursal(String nombre, LocalTime apertura, LocalTime cierre, Domicilio dom) {
+    public Sucursal(String nombre, LocalTime horarioApertura, LocalTime horarioCierre, Domicilio domicilio) {
         this.nombre = nombre;
-        this.horarioApertura = apertura;
-        this.horarioCierre = cierre;
-        this.domicilio = dom;
+        this.horarioApertura = horarioApertura;
+        this.horarioCierre = horarioCierre;
+        this.domicilio = domicilio;
     }
 
-    public void setEmpresa(Empresa emp) {
-        this.empresa = emp;
+    public void addPromocion(Promocion promocion) {
+        if (this.promocion == null) {
+            this.promocion = new HashSet<>();
+        }
+        this.promocion.add(promocion);
     }
-    public void addPromocion(Promocion p) {
-        promociones.add(p);
-        p.getSucursales().add(this);
+
+    public void removePromocion(Promocion promocion) {
+        if(this.promocion != null) {
+            this.promocion.remove(promocion);
+        }
     }
-    public void addPedido(Pedido ped) {
-        pedidos.add(ped);
-        ped.setSucursal(this);
+
+    public void addCategoria(Categoria categoria) {
+        if (this.categoria == null) {
+            this.categoria = new HashSet<>();
+        }
+        this.categoria.add(categoria);
+    }
+
+    public void removeCategoria(Categoria categoria) {
+        if (this.categoria != null) {
+            this.categoria.remove(categoria);
+        }
     }
 
     public String getNombre() {
@@ -53,10 +68,6 @@ public class Sucursal {
         this.horarioCierre = horarioCierre;
     }
 
-    public Empresa getEmpresa() {
-        return empresa;
-    }
-
     public Domicilio getDomicilio() {
         return domicilio;
     }
@@ -65,18 +76,31 @@ public class Sucursal {
         this.domicilio = domicilio;
     }
 
+    public HashSet<Categoria> getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(HashSet<Categoria> categoria) {
+        this.categoria = categoria;
+    }
+
+    public HashSet<Promocion> getPromocion() {
+        return promocion;
+    }
+
+    public void setPromocion(HashSet<Promocion> promocion) {
+        this.promocion = promocion;
+    }
+
     @Override
     public String toString() {
         return "Sucursal{" +
                 "nombre='" + nombre + '\'' +
                 ", horarioApertura=" + horarioApertura +
                 ", horarioCierre=" + horarioCierre +
-                ", empresa=" + empresa +
                 ", domicilio=" + domicilio +
-                ", promociones=" + promociones +
-                ", pedidos=" + pedidos +
+                ", categoria=" + categoria +
+                ", promocion=" + promocion +
                 '}';
     }
-
-    // toString(), getters, setters...
 }

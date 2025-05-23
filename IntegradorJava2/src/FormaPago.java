@@ -1,3 +1,3 @@
 public enum FormaPago {
-    EFECTIVO, MERCADO_PAGO;
+    efectivo, MercadoPago
 }

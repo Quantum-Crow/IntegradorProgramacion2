@@ -1,20 +1,34 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 
 public abstract class Articulo {
     protected String denominacion;
     protected double precioVenta;
 
-    // asociaciones
-    protected Categoria categoria;
     protected UnidadMedida unidadMedida;
-    protected List<Imagen> imagenes = new ArrayList<>();
-    protected List<DetallePedido> detallesPedido = new ArrayList<>();
-
+    protected HashSet<Imagen1> Imagen;
 
     public Articulo(String denominacion, double precioVenta) {
         this.denominacion = denominacion;
         this.precioVenta = precioVenta;
+    }
+
+    public Articulo(String denominacion, double precioVenta, UnidadMedida unidadMedida) {
+        this.denominacion = denominacion;
+        this.precioVenta = precioVenta;
+        this.unidadMedida = unidadMedida;
+    }
+
+    public void addImagen(Imagen1 imagen) {
+        if (Imagen == null) {
+            Imagen = new HashSet<>();
+        }
+        this.Imagen.add(imagen);
+    }
+
+    public void removeImagen(Imagen1 imagen) {
+        if (Imagen != null) {
+            this.Imagen.remove(imagen);
+        }
     }
 
     public String getDenominacion() {
@@ -33,41 +47,11 @@ public abstract class Articulo {
         this.precioVenta = precioVenta;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-
     public UnidadMedida getUnidadMedida() {
         return unidadMedida;
     }
 
     public void setUnidadMedida(UnidadMedida unidadMedida) {
         this.unidadMedida = unidadMedida;
-    }
-
-    public List<Imagen> getImagenes() {
-        return imagenes;
-    }
-
-    public void setImagenes(List<Imagen> imagenes) {
-        this.imagenes = imagenes;
-    }
-
-    public List<DetallePedido> getDetallesPedido() {
-        return detallesPedido;
-    }
-
-    public void setDetallesPedido(List<DetallePedido> detallesPedido) {
-        this.detallesPedido = detallesPedido;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Articulo[" + denominacion + ", precio=" + precioVenta + "]";
     }
 }
